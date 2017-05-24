@@ -16,7 +16,7 @@ header{
 	margin:0 auto;
 	padding:2px; 
 	text-align:center;
-	width:1000px;
+	width:1200px;
 	position:fixed;
 	
 }
@@ -45,9 +45,7 @@ a{
 	color: rgba(127, 0, 0, 1);
 	text-decoration:none;
 }
-#id1{
-	
-}
+
 .bttnImage{
 	width:24%;
 	height:400px;
