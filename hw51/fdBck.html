@@ -67,26 +67,103 @@
     #sbmt{
         width:10%;
     }
-    </style>
+    #exprnc input{
+        width: 4%;
+    } 
+     th, td {
+            border: 1px solid black;
+            padding: 8px 4px;
+            width: 70px;
+            text-align: center;
+        }
+      table {
+            border-collapse: collapse;
+            background-color: white;
+            
+        }
+       textarea{
+           height: 120px;
+           width: 300px;
+       } 
 
+    </style>
 </head>
 <body>
     <header>
-			   <img class="center" src="rstrntImg/laa2.png" alt="logo">
-               <h1 ><a id="logo" href="index.html">A LA AISH</a></h1>
-			   <h3>a fine grill and steakhouse</h3>
-			</header>
-            <div id="border">
-            <form>
-                <label >First Name<input type="text" name="frstNm"/></label>
-                <label >Last Name<input type="text" name="lstNm"/></label>
-                <label class="block">When were you last here?<input type="text" name="date"/></label><br><br>
-                <label class="block">Pease tell us about your experiance<input id="inpt"type="text" name="feedBck"/></label>
-                <br>
+        <img class="center" src="rstrntImg/laa2.png" alt="logo">
+        <h1 ><a id="logo" href="index.html">A LA AISH</a></h1>
+        <h3>a fine grill and steakhouse</h3>
+  </header>
+     <div id="border">
+        <form>
+           <label >First Name <input type="text" name="frstNm"/></label>
+            <label >Last Name <input type="text" name="lstNm"/></label>
+             <label class="block">Email <input type="email" name="email"/></label>
+             <label class="block">Phone Number <input type="tel" name="telephone"/></label>
+             <label class="block">When were you last here? <input type="date" name="date"/></label><br><br>
 
-                <input id="sbmt" type="submit"/>
-                </form>
-            </div>
+            <label id="exprnc">
+                How was your overall experience?
+                <input type="radio" name="experience" value="Very Good" required checked/>Very Good,
+                <input type="radio" name="experience" value="Good"/>Good,
+                <input type="radio" name="experience" value="ok"/>Ok,
+                <input type="radio" name="experience" value="Not Good"/>Not Good     
+            </label>
 
-            
+            <label class="block" id="exprnc">
+                Are you likely to recomend us to others?
+                <input type="radio" name="recomend" value="yes" required checked/>Yes
+                <input type="radio" name="recomend" value="no"/>No
+            </label>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rating=</th>
+                        <th>Excellent</th>
+                        <th>Good</th>
+                        <th> Ok </th>
+                        <th> Bad </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Service</th>
+                        <td><input type="radio" name="service" value="Excellent" required /></td>
+                        <td><input type="radio" name="service" value="Good"/></td>
+                        <td><input type="radio" name="service" value="ok"/></td>
+                        <td><input type="radio" name="service" value="Bad"/></td>
+                    </tr>
+                    <tr>
+                        <th>Food</th>
+                        <td><input type="radio" name="food" value="Excellent"></td>
+                        <td><input type="radio" name="food" value="Good"/></td>
+                        <td><input type="radio" name="food" value="ok" /></td>
+                        <td><input type="radio" name="food" value="Bad" /></td>
+                    </tr>
+                    <tr>
+                        <th>Wine</th>
+                        <td><input type="radio" name="wine" value="Excellent" /></td>
+                        <td><input type="radio" name="wine" value="Good"/></td>
+                        <td><input type="radio" name="wine" value="ok"/></td>
+                        <td><input type="radio" name="wine" value="Bad"/></td>
+                    </tr>
+                    <tr>
+                        <th>Dessert</th>
+                        <td><input type="radio" name="dessert" value="Excellent"/></td>
+                        <td><input type="radio" name="dessert" value="Good"/></td>
+                        <td><input type="radio" name="dessert" value="ok"/></td>
+                        <td><input type="radio" name="dessert" value="Bad"/></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br> 
+            <br>   
+
+
+            <label class="block">Pease tell us about your experiance <textarea name="feedBck"></textarea></label><br>
+            <input id="sbmt" type="submit"/>
+         </form>
+    </div> 
+     
 </html>
