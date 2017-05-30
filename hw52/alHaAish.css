@@ -1,0 +1,69 @@
+
+
+html{
+	background-image:url(rstrntImg/flames.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	}
+body {
+	max-width: 1200px;
+	margin: 0 auto;
+	background-color:rgba(158, 158, 158, 0.68);
+	
+}
+
+header{
+	z-index:1;
+	margin:0 auto;
+	padding:2px; 
+	text-align:center;
+	width:1200px;
+	position:fixed;
+	
+}
+.undrhdr{
+	margin:0 auto;
+	padding:2px; 
+	text-align:center;
+	width:1000px;
+	padding-top:225px
+}
+h1{
+	color:rgba(127, 0, 0, 1);
+	font-size:55px;
+	text-align:center;
+}
+h2{
+	color:rgba(127, 0, 0, 1);
+	
+	text-align:center;
+}
+#im{
+	text-align:center;
+	
+}
+a{
+	color: rgba(127, 0, 0, 1);
+	text-decoration:none;
+}
+
+.bttnImage{
+	width:24%;
+	height:400px;
+}
+.mainPic{
+	width:100%;
+	height:200px;
+}
+.imgDiv{
+	    text-align: center;
+		
+}
+p{
+	text-align:center;
+}
+#logo{
+	font-family:algerian;
+	margin:0;
+	}
+	
