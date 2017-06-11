@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /**{
+            box-sizing: border-box;
+        }*/
+      html{
+          background-color: white;
+      }
+      body{
+          max-width: 85%;
+          background-color: white;
+          font-family: helvetica,arial,san-serif;
+          margin: 0 auto;
+          margin-top: 50px;
+          margin-bottom: 60px;
+      }
+      header{
+           top: 0;
+           position: fixed;
+           width: 100%;
+           background-color: black;
+           margin:0 auto;
+           left: 0;
+           z-index: 1;
+           
+      }
+      footer{
+            position: fixed;
+           width: 100%;
+           background-color: black;
+           margin:0 auto;
+           left: 0;
+           color: white;
+           bottom: 0;
+          
+      }
+      footer div h3{
+          width: 85%;
+           margin: 16 auto;
+      }
+      nav{
+          width:85%;  
+          margin: 0 auto;
+      }
+      ul{
+          margin-left: -57px;
+      }
+      li{
+          color: white;
+          display: inline-block;
+          margin-left: 20px;
+      }
+      #title{
+          background-color: lightgrey;
+          padding:50px;
+          text-align: center;
+          height: 150px;
+      }
+      li a{
+          text-decoration: none;
+          color: white;
+      }
+      a:hover{
+          text-decoration: underline;
+          color: red;
+      }
+      .italic{
+          font-style: italic;
+      }
+      #title h1{
+          text-transform: uppercase;
+      }
+      section{
+          margin-top: 140px;
+      }
+      .vidpic p {
+            text-align: justify;
+        }
+      
+        video,img {
+            width: 100%;
+        }
+           .block{
+         display: block;
+     }  
+        @media screen and (min-width: 1000px) {
+            .vidpic {
+                width: 33.333%;
+                display: inline-block;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+             .block{
+                display: inline;
+            }
+             #vid{
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }  
+        }
+
+
+        h2{
+            text-align: center;
+        }
+        .signUp{
+            background-color: lightgrey;
+            padding:10px;
+            height: 175px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        input{
+            box-shadow: 2px 2px 0px 1px;
+            border-radius: 4px;
+            margin: 5px;
+        }
+        button{
+            box-shadow: 1px 1px -1px;
+            border-radius: 3px;
+            margin: auto;
+            
+        }
+        table{
+            margin: 0 auto;
+        }
+       caption{
+           font-style: bold;
+           font-size: 20px;
+           text-align: center;
+           caption-side: top;
+           border: none;
+           padding-bottom: 12px;
+       }
+       th,td{
+           border: 1px solid black;
+           padding: 5px 10px;
+           text-align: right;
+       }
+      
+       table{
+           border-collapse: collapse;
+           margin: 0 auto;
+       }
+       tbody tr:nth-child(odd){
+            background-color: lightgray;
+       }
+      td:last-child{
+          color: red;
+          padding-left: 50px;
+      }
+      table tr:hover{
+           background-color: blue;
+     }
+     #toprow:hover{
+         background-color: white;
+     }
+     /*#toprow th:last-child{
+         color: red;
+     }*/
+     footer p{
+         padding-left: 7.3%;
+     }
+      
+
+
+     
+    </style>     
+</head>
+<body>
+    <header>
+    <nav>
+        <ul>
+            <li><a href="#prdcts">Products</a></li>
+            <li><a href="#signup">Sign up</a></li>
+            <li><a href="#finance">Financials</a></li>
+            <li><a href="#aboutUs">About Us</a></li>
+        </ul>
+    </nav>
+    </header>
+    <div id="title">
+        <h1>estuff</h1>
+        <h3>A <span class="italic">PCS</span> company</h3>
+    </div>
+    <section id="prdcts">
+        <h1>Products</h1>
+        <p>Take a look at our products. My , this test is more than i thought it would be!,oh well, i hope we get an extension!</p>
+         <div><!--
+            --><div class="vidpic">
+                 <h2>Computers</h2>
+                 <img src="macworld.jpg" alt="mac">
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto atque tempor, provident.</p>
+            </div><!--
+            --><div class="vidpic" id="vid">
+                  <h2>Choirs</h2>
+                  <video controls poster="shira.png" src="elHanaar.mp4"></video>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ratione a ducimus.</p>
+            </div><!--
+            --><div class="vidpic">
+                   <h2>Candy</h2>
+                   <img src="candy.png" alt="candy">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam numquam, eaque sunt.</p>
+            </div><!--
+        --></div>
+        </section >
+        <form id="signup" class="signUp"action="abc.php" method="post">
+            <h1>Sign Me Up!</h1>
+            <label>Name <input type="text" id="name" name="name" placeholder="Your Name" required/></label>
+            <label class="block">Email <input type="email" id="email" name="email" placeholder="Your Email" required/></label>&nbsp;
+            <button class="block" type="submit">Sign me up!</button>    
+        </form>
+        <section id="finance">
+            <h1>Financials</h1>
+            <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur. consectetur adipisicing elit. Repellendus dignissimos odio, asperiores voluptatibus, ex cum omnis ullam possimus, quidem quibusdam aut nesciunt, expedita eos perferendis. Quae culpa et ipsam, soluta perferendis, iusto, suscipit sapiente mollitia cum sequi sunt minus voluptatem asperiores quasi saepe impedit natus officia quos. Culpa dolore eligendi labore, aperiam nostrum atque suscipit molestiae magnam hic, ea similique, doloribus quia delectus harum quibusdam!</p>
+        
+        <table>
+            <caption>Profits - By Quarter</caption>
+            <thead>
+                <tr id="toprow">
+                    <th>Year</th>
+                    <th>First Quarter Profits</th>
+                    <th>Second Quarter Profits</th>
+                    <th>Third Quarter Profits</th>
+                    <th>Fourth Quarter Profits</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>2012</th>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$12534564.32</td>
+                </tr>
+                <tr>
+                    <th>2013</th>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$12354564.32</td>
+                </tr>
+                <tr>
+                    <th>2014</th>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$14254564.32</td>
+                </tr>
+                <tr>
+                    <th>2015</th>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$12564564.32</td>
+                </tr>
+                <tfoot>
+                    <th colspan="5">Total</th>
+                    <td>$7546464535.44</td>
+                </tfoot>    
+            </tbody>
+        </table>
+        </section>
+        <section id="aboutUs">
+            <h1>About Us</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae adipisci suscipit sapiente voluptatum, molestiae possimus eveniet rem temporibus dicta harum pariatur veniam a ut facere repudiandae quia, cupiditate voluptate earum. Quod nam ipsum quisquam porro cum quae, alias autem molestiae natus quas repellendus, repellat, praesentium? Soluta sint, minus ullam voluptas porro velit, quisquam ipsa nobis aspernatur quae voluptates iste quis, quas, quidem expedita. Debitis totam eaque a veniam porro quo ea, repudiandae rerum esse? Inventore minus, saepe veniam necessitatibus optio maxime cumque nulla provident soluta officia voluptatibus possimus voluptas doloremque commodi laborum eum quasi quaerat delectus adipisci architecto sint animi tempore. Odio nostrum assumenda nemo possimus ipsum amet doloribus animi quod velit voluptatem, consectetur, delectus ullam consequuntur dolores ipsam commodi totam, recusandae rem eveniet nesciunt provident eos? Tempora suscipit excepturi ullam ipsam quos minima. Veritatis fugiat id, neque aspernatur quaerat error incidunt placeat magni odio, ab eligendi voluptatum animi labore corporis fugit possimus quidem ipsum architecto. Quasi earum, eveniet quo cum tenetur aperiam delectus esse obcaecati dolores! Facere quos eveniet, odit voluptatibus, eaque provident, explicabo ratione assumenda harum modi praesentium a, odio dolore. Officiis quod eaque repellat, esse maxime eius sed vero modi, sapiente blanditiis molestias, libero illo officia ipsum!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet totam porro perferendis praesentium in, explicabo nam vero. Rem adipisci deleniti totam rerum, minus dolore excepturi accusamus voluptatibus, provident magnam odio nisi minima itaque, autem porro perspiciatis dolor doloribus consequuntur atque aspernatur mollitia. Hic aperiam, ipsam quos beatae dicta, autem fugit dolore quidem voluptatibus optio necessitatibus porro commodi, eveniet aliquam. Neque dolore necessitatibus nisi repudiandae? Adipisci ullam, sapiente quia illo impedit facere excepturi labore expedita laudantium reiciendis quibusdam cumque, alias ab iure beatae tenetur, quis laborum quaerat dolores iusto suscipit? Explicabo labore quod laborum libero laudantium suscipit vel voluptate repellat!</p>
+       </section> 
+      <footer>
+          <div>
+          <p>&copy; ESTUFF2015</p>
+          </div>
+      </footer>
+</body>
+</html>
