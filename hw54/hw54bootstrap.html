@@ -13,6 +13,13 @@
         body {
             margin-top: 50px;
         }
+        .nav>li>a{
+            padding-right:30px;
+            padding-left:0px;
+        }
+        footer p{
+            color:white;
+        }
     </style>
 </head>
 
@@ -33,29 +40,104 @@
             <h2>a <em>pcs</em> company</h2>
         </div>
    
-    <section class="row pad">
-       
+      <section class="row">
         <h1>Products</h1>
         <p>Take a look at our products. My , this test is more than i thought it would be!,oh well, i hope we get an extension!</p>
-         <div><!--
-            --><div class="col-md-4">
+            <div class="col-md-4">
                  <h2 class="text-center">Computers</h2>
                  <img class="img-responsive" src="macworld.jpg" alt="mac">
                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto atque tempor, provident.</p>
-            </div><!--
-            --><div class="col-md-4">
+            </div>
+            <div class="col-md-4">
                   <h2 class="text-center">Choirs</h2>
                   <video  class="img-responsive" controls poster="shira.png" src="elHanaar.mp4"></video>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ratione a ducimus.</p>
-            </div><!--
-            --><div class="col-md-4">
+            </div>
+            <div class="col-md-4">
                    <h2 class="text-center">Candy</h2>
                    <img  class="img-responsive" src="candy.png" alt="candy">
                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam numquam, eaque sunt.</p>
-            </div><!--
-        --></div>
+            </div>
         </section>
-         </div>
+
+        <section class="row">
+        <div class="jumbotron text-center">
+         <form id="signup" class="form-inline" action="abc.php" method="post">
+            <h1>Sign Me Up!</h1>
+            <div class="form-group">
+            <label for="name">Name </label>
+            <input type="text" class="form-control"id="name" name="name" placeholder="Your Name" required/>
+            </div>
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required/>  
+            <button type="submit" class="btn btn-default">Sign me up!</button>   
+        </form>
+        </div>
+        </section>
+
+        <section class="row">        
+           <h1>Financials</h1>
+            <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur. consectetur adipisicing elit. Repellendus dignissimos odio, asperiores voluptatibus, ex cum omnis ullam possimus, quidem quibusdam aut nesciunt, expedita eos perferendis. Quae culpa et ipsam, soluta perferendis, iusto, suscipit sapiente mollitia cum sequi sunt minus voluptatem asperiores quasi saepe impedit natus officia quos. Culpa dolore eligendi labore, aperiam nostrum atque suscipit molestiae magnam hic, ea similique, doloribus quia delectus harum quibusdam!</p>
+            <div class="col-md-8 col-md-offset-2">    
+             <table class="table table-bordered table-striped table-hover">
+                 <caption class="text-center">Profits - By Quarter</caption>
+            <thead>
+                <tr id="toprow">
+                    <th>Year</th>
+                    <th>First Quarter Profits</th>
+                    <th>Second Quarter Profits</th>
+                    <th>Third Quarter Profits</th>
+                    <th>Fourth Quarter Profits</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>2012</th>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$12534564.32</td>
+                </tr>
+                <tr>
+                    <th>2013</th>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$12354564.32</td>
+                </tr>
+                <tr>
+                    <th>2014</th>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$14254564.32</td>
+                </tr>
+                <tr>
+                    <th>2015</th>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$1254564.32</td>
+                    <td>$12564564.32</td>
+                </tr>
+                <tr>
+                    <th colspan="5">Total</th>
+                    <td>$7546464535.44</td>
+                </tr>    
+            </table>
+            </div>    
+        </section>
+
+     </div>
+
+     <footer class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+             <p>&copy; ESTUFF2015</p>
+        </div>
+    </footer>
 </body>
 
 </html>
