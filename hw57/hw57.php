@@ -93,9 +93,14 @@ echo "<br/>";
                             <h3>U.S. PRESIDENTS</h3>
                         </caption>
                         <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Year</th>
+                        <tr>
+                        <?php
+                             
+                                foreach($presidents2["Trump"] as $key=>$value){
+                                       echo "<th>".$key."</th>";
+                                       }
+                             
+                            ?>
                             </tr>
                         </thead>
                         <tbody>
