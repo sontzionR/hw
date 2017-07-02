@@ -28,11 +28,7 @@ if($_GET || $_POST){ /*<-credits to yochanan,Thanks for this line*/
     $errors[]= "please enter a valid language";
     } 
 }
- 
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +47,7 @@ if($_GET || $_POST){ /*<-credits to yochanan,Thanks for this line*/
             <h1>Programming Info</h1>
         </div>
 
-        <?php if (!empty($errors)) {?>
+        <?php if (!empty($errors) && ($_GET || $_POST)) {?>
             <div class="well text-danger">
                 <ul>
                     <?php foreach($errors as $error) { ?>
@@ -59,8 +55,8 @@ if($_GET || $_POST){ /*<-credits to yochanan,Thanks for this line*/
                     <?php } ?>
                 </ul>
             </div>
-            <?php }else{
-            echo"Thank you for submitting your data"  ?>
+            <?php }elseif(empty($errors) && ($_GET || $_POST)){
+            echo"Thank you for submitting your data. $language, is a good choice "  ?>
             <?php } ?>
 
 
@@ -111,5 +107,4 @@ if($_GET || $_POST){ /*<-credits to yochanan,Thanks for this line*/
         </form>
     </div>
 </body>
-
 </html>
