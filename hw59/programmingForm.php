@@ -5,8 +5,7 @@ $name="";
 $years="";
 $language="";
 
-if($_GET || $_POST){
-
+if($_GET || $_POST){ /*<-credits to yochanan,Thanks for this line*/
     if(!empty($_GET['name'])){
         $name = $_GET['name'];
     }else{
@@ -90,7 +89,7 @@ if($_GET || $_POST){
                 </div>
             </div>
 
-
+             <!--to choose from a list of languages-->
             <!--<div class="form-group">
                <div class="col-sm-offset-1 col-sm-10">
                     <select class="form-control" name="language[]" multiple>
