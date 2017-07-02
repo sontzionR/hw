@@ -1,41 +1,49 @@
 <?php
-
-    if(isset($_POST['name'])) {
-        if(is_numeric($_POST['name'])) {
+    $name="";
+    $email="";
+    $age="";
+    $rating="";
+    
+    if($_GET || $_POST){
+    if(!empty($_GET['name'])) {
+        if(is_numeric($_GET['name'])) {
             $errors[]=("Name must be alphbet");
         }
-        $name = $_POST['name'];
+        $name = $_GET['name'];
     } 
     else {
         $errors[]=("please enter text");
     }
 
-    if(isset($_POST['email'])) {
-        if(is_numeric($_POST['email'])) {
+
+    if(!empty($_GET['email'])) {
+        if(is_numeric($_GET['email'])) {
             $errors[]=("please enter valid email");
         }
-        $email = $_POST['email'];
+        $email = $_GET['email'];
     } else {
         $errors[]=("please enter email"); 
     }
 
-    if(isset($_POST['age'])) {
-        if(!is_numeric($_POST['age']) || $_POST['age'] < 1 || $_POST['age'] >120) {
+    if(isset($_GET['age'])) {
+        if(!is_numeric($_GET['age']) || $_GET['age'] < 1 || $_GET['age'] >120) {
                $errors[]=("please enter valid age");
-        }
-        $age = $_POST['age'];
+        }else {
+          $age = $_GET['age'];
+        }  
     } else {
        $errors[]=("please enter an age");
     }
 
-    if(isset($_POST['rating'])) {
-        if(!is_numeric($_POST['rating']) || $_POST['rating'] < 1 || $_POST['rating'] >10) {
+    if(isset($_GET['rating'])) {
+        if(!is_numeric($_GET['rating']) || $_GET['rating'] < 1 || $_GET['rating'] >10) {
                $errors[]=("please enter valid rating");
         }
-        $rating = $_POST['rating'];
+        $rating = $_GET['rating'];
     } else {
        $errors[]=("please enter a rating");
     }
+    }; 
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +69,7 @@
         <div class="jumbotron text-center">
             <h1>Your Info</h1>
         </div>
-        <?php if (isset($errors)) : ?>
+        <?php if (!empty($errors)) : ?>
             <div class="well text-danger">
                 <ul>
                     <?php foreach($errors as $error) : ?>
@@ -73,25 +81,24 @@
         <div>
             <div>
                 <div class="well col-sm-2 text-right">Name</div>
-                <div class="col-sm-10 well"><?= ($name) ?></div>
+                <div class="col-sm-10 well"><?= $name ?></div>
             </div>
             <div>
                 <div class="well col-sm-2 text-right">Email</div>
-                <div class="col-sm-10 well"><?= ($email) ?></div>
+                <div class="col-sm-10 well"><?= $email ?></div>
             </div>
             <div>
                 <div class="well col-sm-2 text-right">Age</div>
-                <div class="col-sm-10 well"><?= number_format($age) ?></div>
+                <div class="col-sm-10 well"><?= $age ?></div>
             </div>
             <div>
                 <div class="well col-sm-2 text-right">Rating</div>
-                <div class="col-sm-10 well"><?= number_format($rating) ?></div>
+                <div class="col-sm-10 well"><?= $rating ?></div>
             </div>
         </div>
 
     </div>
-    <script src="/jquery-1.12.4.min.js"></script>
-    <script src="/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    
 </body>
 
 </html>
