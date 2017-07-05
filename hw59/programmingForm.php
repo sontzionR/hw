@@ -6,24 +6,24 @@ $years="";
 $language="";
 
 if($_GET || $_POST){ /*<-credits to yochanan,Thanks for this line*/
-    if(!empty($_GET['name'])){
-        $name = $_GET['name'];
+    if(!empty($_POST['name'])){
+        $name = $_POST['name'];
     }else{
     $errors[]= "NAME IS REQUIRED";
     } 
      
-    if(isset($_GET['years'])) {
-        if(!is_numeric($_GET['years']) || $_GET['years'] < 0 || $_GET['years'] > 50) {
+    if(isset($_POST['years'])) {
+        if(!is_numeric($_POST['years']) || $_POST['years'] < 0 || $_POST['years'] > 50) {
             $errors[] = "YEARS MUST BE A VALID NUMBER BETWEEN 0 AND 50";
         } else {
-            $age = $_GET['years'];
+            $age = $_POST['years'];
         }
     } else {
         $errors[] = "YEARS IS REQUIRED";
     }
 
-    if(!empty($_GET['language']) && in_array($_GET['language'],$languages)){
-        $language = $_GET['language'];
+    if(!empty($_POST['language']) && in_array($_POST['language'],$languages)){
+        $language = $_POST['language'];
     }else{
     $errors[]= "please enter a valid language";
     } 
@@ -47,7 +47,7 @@ if($_GET || $_POST){ /*<-credits to yochanan,Thanks for this line*/
             <h1>Programming Info</h1>
         </div>
 
-        <?php if (!empty($errors) && ($_GET || $_POST)) {?>
+        <?php if (!empty($errors) && ($_POST || $_POST)) {?>
             <div class="well text-danger">
                 <ul>
                     <?php foreach($errors as $error) { ?>
@@ -60,7 +60,7 @@ if($_GET || $_POST){ /*<-credits to yochanan,Thanks for this line*/
             <?php } ?>
 
 
-        <form class="form-horizontal" >
+        <form class="form-horizontal"method="post" >
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
@@ -72,7 +72,7 @@ if($_GET || $_POST){ /*<-credits to yochanan,Thanks for this line*/
             <div class="form-group">
                 <label for="age" class="col-sm-2 control-label">Years</label>
                 <div class="col-sm-10">
-                    <input type="number" min="1" step="1" max="120" class="form-control" id="years" name="years"
+                    <input type="number" class="form-control" min="1" step="1" max="120" id="years" name="years"
                      placeholder="years" xrequired value="<?= $years ?>">
                 </div>
             </div>
