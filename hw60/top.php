@@ -1,15 +1,25 @@
 <?php
-$font = "Helvetica Neue,Helvetica,Arial,sans-serif";
-if(!empty($_GET["font"])) {
-    $font = $_GET["font"];
-}
+
 if(empty($color)) {
     $color = "white";
 }
-if(!empty($_GET["textArea"])) {
-    $color = $_GET["textArea"];
+if(!empty($_GET["textAreaColor"])) {
+    $color = $_GET["textAreaColor"];
 }
 
+if(empty($font)) {
+    $font = "Helvetica Neue,Helvetica,Arial,sans-serif";
+}
+if(!empty($_GET["fontTA"])) {
+    $font = $_GET["fontTA"];
+}
+
+if(empty($size)) {
+    $size = "20px";
+}
+if(!empty($_GET["sizeTA"])) {
+    $size = $_GET["sizeTA"];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +34,10 @@ if(!empty($_GET["textArea"])) {
         textarea.form-control {
             background-color: <?= $color ?>;
             font-family: <?= $font ?>;
+            
+        }
+        .form-control{
+             font-size: <?= $size ?>;
         }
     </style>
 </head>

@@ -1,0 +1,56 @@
+<?php
+$months=[
+  "Januray",
+  "Feburary",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+function generateMonths($months){
+  $returnedMonth = "";
+  foreach ($months as $month) {
+      $returnedMonth .= "<option>" . $month . "</option>"; 
+  }
+  return $returnedMonth;
+  
+};
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>How Many DAys</h1>
+        </div>            
+        <form class="form-inline" action="returnedForm.php" method="get">>
+          <div class="form-group">
+            <label for="month">month</label>
+            <select class="form-control" id="month" >
+               <?= generateMonths($months) ?>
+            </select>  
+          </div>
+          <div class="form-group">
+            <label for="year">Year</label>
+            <input type="number" class="form-control" id="year" >
+          </div>
+          <button type="submit" class="btn btn-default">Generate</button>
+        </form>
+</body>
+</html>  
+   

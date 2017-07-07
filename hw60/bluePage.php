@@ -1,5 +1,6 @@
 <?php
 $color="blue";
+$font="Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif"
 ?>
 <?php
 include "top.php"
