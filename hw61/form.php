@@ -1,26 +1,15 @@
 <?php
-$months=[
-  "Januray",
-  "Feburary",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
+include "top.php";
+
+// print_r($months);
 function generateMonths($months){
   $returnedMonth = "";
-  foreach ($months as $month) {
-      $returnedMonth .= "<option>" . $month . "</option>"; 
+  foreach ($months as $key=>$value) {
+      $returnedMonth .= "<option>" . $key . "</option>"; 
   }
   return $returnedMonth;
-  
 };
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,21 +25,22 @@ function generateMonths($months){
 <body>
     <div class="container">
         <div class="jumbotron text-center">
-            <h1>How Many DAys</h1>
+            <h1>How Many Days</h1>
         </div>            
-        <form class="form-inline" action="returnedForm.php" method="get">>
+        <form class="form-inline" action="returnedForm.php" method="get">
           <div class="form-group">
             <label for="month">month</label>
-            <select class="form-control" id="month" >
+            <select class="form-control" id="month" name="month" >
                <?= generateMonths($months) ?>
             </select>  
           </div>
           <div class="form-group">
             <label for="year">Year</label>
-            <input type="number" class="form-control" id="year" >
+            <input type="number" class="form-control" id="year" min="1900" max="9999" placeholder="2000" name="year">
           </div>
           <button type="submit" class="btn btn-default">Generate</button>
         </form>
+    </div>
 </body>
 </html>  
    
