@@ -10,6 +10,14 @@ function generateMonths($months){
   return $returnedMonth;
 };
 
+function generateYears(){
+  $returnedYear = "";
+  for ($year=1582;$year < 2582;$year++) {
+      $returnedYear .= "<option>" . $year . "</option>"; 
+  }
+  return $returnedYear;
+};
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +44,10 @@ function generateMonths($months){
           </div>
           <div class="form-group">
             <label for="year">Year</label>
-            <input type="number" class="form-control" id="year" min="1900" max="9999" placeholder="2000" name="year">
+            <!--<input type="number" class="form-control" id="year" min="1900" max="9999" placeholder="2000" name="year">-->
+            <select class="form-control" id="year" name="year" min="1582" max="2582" placeholder="2000" >
+               <?= generateYears() ?>
+            </select>  
           </div>
           <button type="submit" class="btn btn-default">Generate</button>
         </form>

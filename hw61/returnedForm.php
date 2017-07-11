@@ -32,6 +32,7 @@ function daysInMonth($month,$year){
     } 
 return $days;
 };
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

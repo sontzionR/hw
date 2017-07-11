@@ -1,8 +1,8 @@
 <?php
 
 $months=[
-  "Januray"=> 30,
-  "Feburary"=> 1,
+  "January"=> 30,
+  "Feburary"=> 0,
   "March"=> 31,
   "April"=> 30,
   "May"=> 31,
