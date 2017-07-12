@@ -38,7 +38,7 @@
         <div class="jumbotron text-center">
             <h1>Seforim Order Form</h1>
         </div>            
-        <form class="form-inline" action="returnedForm.php" method="get">
+        <form class="form-inline" action="price.php" method="get">
           <div class="form-group">
             <label for="name">Sefer</label>
             <select class="form-control" id="name" name="name" >
