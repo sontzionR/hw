@@ -12,7 +12,7 @@ if(isset($_POST['price'])){
     if(empty($_POST['price'] || !is_numeric($_POST['price']))){
         die("enter a valid price");
     }else{
-        $name=$_POST['price'];
+        $price=$_POST['price'];
     }
 };
 
