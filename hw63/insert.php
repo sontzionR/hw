@@ -9,7 +9,8 @@ try {
     echo "Connected<br/>";
  
     if(isset($_POST['name']) && isset($_POST['price'])){
-        if(empty($_POST['name']) || empty($_POST['price'])){
+        if(empty($_POST['name']) || is_numeric($_POST['name']) ||
+         empty($_POST['price'])|| !is_numeric($_POST['price'])){
             die("enter a valid name and price");
         }else{
             $name=$_POST['name'];

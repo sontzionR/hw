@@ -1,5 +1,5 @@
 <?php
-    $theSefer = $_POST['name'];
+    
     $cs = "mysql:host=localhost;dbname=seforimstore";
     $user = "test";
     $password = 'password';
@@ -8,18 +8,24 @@
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
         $db = new PDO($cs, $user, $password, $options);
         echo "Connected<br/>";
-
+        
          $query = "SELECT * FROM seforim";
         $results = $db->query($query);
         $returnedSefer = "";
         foreach($results as $sefer) {
         $returnedSefer .= "<option> {$sefer['name']} </option>"; 
         }
+        if(isset($_POST['name'])){
+            if(empty($_POST['name'])){
+                die("enter a valid name and price");
+            }else{
+                $theSefer = $_POST['name'];
+            }
         $del = "DELETE FROM seforim WHERE name = :theSefer";
         $statement = $db->prepare($del);
         $statement->bindValue('theSefer',$theSefer);
         $statement->execute();
-
+        }
     } catch(PDOException $e) {
         die("Something went wrong " . $e->getMessage());
     }
