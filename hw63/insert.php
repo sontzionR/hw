@@ -1,31 +1,20 @@
 <?php
-$name="";
-$price="";
-if(isset($_POST['name'])){
-    if(empty($_POST['name'] || is_numeric($_POST['name']))){
-        die("enter a valid name");
-    }else{
-        $name=$_POST['name'];
-    }
-};
-if(isset($_POST['price'])){
-    if(empty($_POST['price'] || !is_numeric($_POST['price']))){
-        die("enter a valid price");
-    }else{
-        $price=$_POST['price'];
-    }
-};
-
-
 
 $cs = "mysql:host=localhost;dbname=seforimstore";
 $user = "test";
 $password = 'password';
-
 try {
     $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
     $db = new PDO($cs, $user, $password, $options);
     echo "Connected<br/>";
+ 
+    if(isset($_POST['name']) && isset($_POST['price'])){
+        if(empty($_POST['name']) || empty($_POST['price'])){
+            die("enter a valid name and price");
+        }else{
+            $name=$_POST['name'];
+            $price=$_POST['price'];
+        }    
     // $insert = "INSERT INTO seforim (name, price) VALUES ('$name','$price')";
     $insert = "INSERT INTO seforim (name, price) VALUES (:name,:price)";
     // $rowsInserted = $db->exec($insert);
@@ -34,6 +23,7 @@ try {
     $statement->bindValue('price',$price);
     $statement->execute();
     echo "Inserted <br/>";
+    }     
 } catch(PDOException $e) {
     die("Something went wrong " . $e->getMessage());
 }
