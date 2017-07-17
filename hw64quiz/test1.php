@@ -57,10 +57,13 @@
                 <label for="student" class="col-sm-2 control-label">Select A student</label>
                 <div class="col-sm-10">
                 <select class="form-control" id="student" name="student">
+  <!-- /*this is how it worked before i committed it i think i didnt save so i am fixing it
+   (just relized now when i ran it in the browser that it want working like before) but im still not 
+   finished so please count as 1030 from now?just took out one line that i didnt save after i removed it*/  -->
                         <?php foreach($students as $student) :?>
                         <option value="<?= $student['name'] ?>"
-                        <?php if (!empty($selectedstudent) && $student['name'] == $selectedstudent['name']) echo "selected" ?>
-                        ><?=$student["name"].' '. $student["grade"].' '. $student["grade"] ?></option>
+                         echo "selected" ?>
+                        <?=$student["name"].' '. $student["grade"].' '. $student["grade"] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
