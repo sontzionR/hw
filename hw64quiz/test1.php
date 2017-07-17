@@ -7,7 +7,7 @@
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
         $db = new PDO($cs, $user, $password, $options);
 
-        $query = "SELECT * FROM students GROUP BY name";
+        $query = "SELECT s1.name, s1.grade AS grade1, s2.grade AS grade2 FROM students s1 INNER JOIN students s2 ON s1.name = s2.name WHERE s1.grade<>s2.grade GROUP BY s1.name";
         $results = $db->query($query);
         $students = $results->fetchAll();
         $results->closeCursor();
@@ -57,13 +57,10 @@
                 <label for="student" class="col-sm-2 control-label">Select A student</label>
                 <div class="col-sm-10">
                 <select class="form-control" id="student" name="student">
-  <!-- /*this is how it worked before i committed it i think i didnt save so i am fixing it
-   (just relized now when i ran it in the browser that it want working like before) but im still not 
-   finished so please count as 1030 from now?just took out one line that i didnt save after i removed it*/  -->
                         <?php foreach($students as $student) :?>
                         <option value="<?= $student['name'] ?>"
                          echo "selected" ?>
-                        <?=$student["name"].' '. $student["grade"].' '. $student["grade"] ?></option>
+                        <?=$student["name"].' '. $student["grade1"].' '. $student["grade2"] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
