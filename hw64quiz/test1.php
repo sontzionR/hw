@@ -13,7 +13,8 @@
         $results->closeCursor();
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if(empty($_POST['student'])){
-                $error = "it seems that there are no valid enteries";
+                $error = "it seems that there are no valid enteries
+                           or you didnt choose one";
             }else{
                 $theName = $_POST['student'];
             }
@@ -55,6 +56,7 @@
                 <div class="col-sm-10">
                 <select class="form-control" id="student" name="student">
                          <?php foreach($students as $student) :?>
+                         <option value="" disabled selected hidden>Please Choose...</option>
                         <option value="<?= $student['name'] ?>"
                          echo "selected" ?>
                         <?=$student["name"].' '. $student["grade1"].' '. $student["grade2"] ?></option>
@@ -72,6 +74,10 @@
         <?php if(!empty($error)) : ?>
             <h2 class="text-center alert alert-danger">
                 <?= $error ?>
+            </h2>
+            <?php elseif(empty($error)&&($_SERVER["REQUEST_METHOD"] === "POST")): ?>
+            <h2 class="text-center alert alert-success">
+                 <?="You have permanently removed"." ".$theName?> 
             </h2>
         <?php endif ?> 
     </div>
