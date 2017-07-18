@@ -6,28 +6,25 @@
     try {
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
         $db = new PDO($cs, $user, $password, $options);
-
+        $theName="";
         $query = "SELECT s1.name, s1.grade AS grade1, s2.grade AS grade2 FROM students s1 INNER JOIN students s2 ON s1.name = s2.name WHERE s1.grade<>s2.grade GROUP BY s1.name";
         $results = $db->query($query);
         $students = $results->fetchAll();
         $results->closeCursor();
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if(isset($_POST['student'])){
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if(empty($_POST['student'])){
-                die("enter a valid name and price");
+                $error = "it seems that there are no valid enteries";
             }else{
                 $theName = $_POST['student'];
             }
+        }
         $del = "DELETE FROM students WHERE name = :theName";
         $statement = $db->prepare($del);
         $statement->bindValue('theName', $theName);
-        $statement->execute();
-        }
-    }    
+        $statement->execute();  
     } catch (PDOException $e) {
         $error = "Something went wrong " . $e->getMessage();
     }
-    
 ?>
 
 <!DOCTYPE html>
@@ -57,11 +54,11 @@
                 <label for="student" class="col-sm-2 control-label">Select A student</label>
                 <div class="col-sm-10">
                 <select class="form-control" id="student" name="student">
-                        <?php foreach($students as $student) :?>
+                         <?php foreach($students as $student) :?>
                         <option value="<?= $student['name'] ?>"
                          echo "selected" ?>
                         <?=$student["name"].' '. $student["grade1"].' '. $student["grade2"] ?></option>
-                        <?php endforeach ?>
+                        <?php endforeach ?> 
                     </select>
                 </div>
             </div>
@@ -72,11 +69,11 @@
             </div>
         </form>
 
-        <!-- <?php if(!empty($error)) : ?>
+        <?php if(!empty($error)) : ?>
             <h2 class="text-center alert alert-danger">
                 <?= $error ?>
             </h2>
-        <?php endif ?> -->
+        <?php endif ?> 
     </div>
 </body>
 
