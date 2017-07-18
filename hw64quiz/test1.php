@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="container">
-        <form class="form-horizontal" method="post">
+        <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
             <div class="form-group">
                 <label for="student" class="col-sm-2 control-label">Select A student</label>
                 <div class="col-sm-10">
