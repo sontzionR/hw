@@ -26,6 +26,7 @@
     } catch (PDOException $e) {
         $error = "Something went wrong " . $e->getMessage();
     }
+    
 ?>
 
 <!DOCTYPE html>
@@ -56,10 +57,10 @@
                 <div class="col-sm-10">
                 <select class="form-control" id="student" name="student">
                          <?php foreach($students as $student) :?>
-                         <option value="" disabled selected hidden>Please Choose...</option>
+                         <option value= disabled selected hidden>  NAME,  GRADE1,  GRADE2</option>
                         <option value="<?= $student['name'] ?>"
                          echo "selected" ?>
-                        <?=$student["name"].' '. $student["grade1"].' '. $student["grade2"] ?></option>
+                        <?="NAME:".$student["name"].", GRADE1=:". $student["grade1"].", GRADE2=". $student["grade2"] ?></option>
                         <?php endforeach ?> 
                     </select>
                 </div>
