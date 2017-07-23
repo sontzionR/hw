@@ -7,7 +7,8 @@
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
         $db = new PDO($cs, $user, $password, $options);
         $theName="";
-        $query = "SELECT s1.name, s1.grade AS grade1, s2.grade AS grade2 FROM students s1 INNER JOIN students s2 ON s1.name = s2.name WHERE s1.grade<>s2.grade GROUP BY s1.name";
+        $query = "SELECT s1.name, s1.grade AS grade1, s2.grade AS grade2 FROM students s1 
+        INNER JOIN students s2 ON s1.name = s2.name WHERE s1.grade<>s2.grade GROUP BY s1.name";
         $results = $db->query($query);
         $students = $results->fetchAll();
         $results->closeCursor();
@@ -25,8 +26,7 @@
         $statement->execute();  
     } catch (PDOException $e) {
         $error = "Something went wrong " . $e->getMessage();
-    }
-    
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +37,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap 101 Template</title>
-
     <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
     </style>
 </head>
-
 <body>
     <div class="jumbotron">
         <div class="container text-center">
@@ -60,18 +58,17 @@
                          <option value= disabled selected hidden>  NAME,  GRADE1,  GRADE2</option>
                         <option value="<?= $student['name'] ?>"
                          echo "selected" ?>
-                        <?="NAME:".$student["name"].", GRADE1=:". $student["grade1"].", GRADE2=". $student["grade2"] ?></option>
+                        <?="NAME:".$student["name"].", GRADE1=". $student["grade1"].", GRADE2=". $student["grade2"] ?></option>
                         <?php endforeach ?> 
                     </select>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">Delete Student</button>
+                <button type="submit" class="btn btn-danger">Delete Student</button>
                 </div>
             </div>
         </form>
-
         <?php if(!empty($error)) : ?>
             <h2 class="text-center alert alert-danger">
                 <?= $error ?>
@@ -83,5 +80,4 @@
         <?php endif ?> 
     </div>
 </body>
-
 </html>
