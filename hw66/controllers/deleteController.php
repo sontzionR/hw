@@ -7,7 +7,8 @@
                 $theSefer = $_POST['name'];
             }
         }      
-    include 'deleteModel.php';   
-    include 'deleteView.php';
+    include 'filterController.php';    
+    include 'models/deleteModel.php';   
+    include 'views/deleteView.php';
 
 ?>

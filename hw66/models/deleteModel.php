@@ -1,6 +1,7 @@
 <?php
 
-    include 'db.php';
+    include 'utils/db.php';
+    include 'filterModel.php'; 
         // $theSefer = "";
         // if(isset($_POST['name'])){
         //     if(empty($_POST['name'])){
@@ -14,7 +15,11 @@
         $statement->bindValue('theSefer',$theSefer);
         $statement->execute();
         
-        $query = "SELECT * FROM seforim";
+         $query = "SELECT * FROM seforim";
+           if(! empty($category)){
+               $query .= " WHERE category='$category'";
+           }
+        
         $results = $db->query($query);
         $returnedSefer = "";
         foreach($results as $sefer) {

@@ -18,7 +18,7 @@
             <label for="category">Category</label>
             <input type="text" class="form-control" id="category" name="category" required>
           </div> 
-          <button type="submit" class="btn btn-default">add sefer</button>
+          <button type="submit" class="btn btn-success">add sefer</button>
         </form>
     </div>
 <?php

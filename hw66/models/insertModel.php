@@ -1,6 +1,6 @@
 <?php 
 
-    include 'db.php';
+    include 'utils/db.php';
     echo "Connected<br/>"; 
  
     if(isset($_POST['name']) && isset($_POST['price']) && isset($_POST['category'])){

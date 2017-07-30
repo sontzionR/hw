@@ -5,7 +5,8 @@
     <div class="container">
         <div class="jumbotron text-center">
             <h1>Delete Seforim Form</h1>
-        </div>            
+        </div>         
+    <?php    include 'filterView.php'; ?>  
         <form class="form-inline"  method="post">
           <div class="form-group">
             <label for="name">Sefer</label>
@@ -13,7 +14,7 @@
                <?= $returnedSefer ?>
             </select>  
           </div>
-          <button type="submit" class="btn btn-default">Delete</button>
+          <button type="submit" class="btn btn-danger">Delete</button>
         </form>
     </div>
 <?php

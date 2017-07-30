@@ -26,9 +26,9 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <ul class="nav navbar-nav">
-                <li><a href="orderController.php">ORDER</a></li>
-                <li><a href="insertController.php">ADD A SEFER</a></li>
-                <li><a href="deleteController.php">REMOVE A SEFER</a></li>
+                <li><a href="index.php?action=home">ORDER</a></li>
+                <li><a href="index.php?action=insert">ADD A SEFER</a></li>
+                <li><a href="index.php?action=delete&category=$category">REMOVE A SEFER</a></li>
                 <li><a href="index.php">About Us</a></li>
             </ul>
         </div>

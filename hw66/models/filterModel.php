@@ -1,4 +1,5 @@
 <?php
+include 'utils/db.php';
 $query = "SELECT DISTINCT category FROM seforim";
         $results = $db->query($query);
         $returnedCategory = "";
@@ -7,8 +8,5 @@ $query = "SELECT DISTINCT category FROM seforim";
            $returnedCategory .= "<option>{$cat['category']}</option>"; 
         }
 
-         $query = "SELECT * FROM seforim";
-           if(! empty($category)){
-               $query .= " WHERE category='$category'";
-           }
+        
 ?>           

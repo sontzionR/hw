@@ -1,11 +1,14 @@
 <?php
 
-    include 'db.php';
+    include 'utils/db.php';
 
         echo "Connected<br/>";
         
-    include 'filterModel.php';    
-
+       include 'filterModel.php'; 
+         $query = "SELECT * FROM seforim";
+           if(! empty($category)){
+               $query .= " WHERE category='$category'";
+           }
         $results = $db->query($query);
         $returnedSefer = "";
         foreach($results as $sefer) {
