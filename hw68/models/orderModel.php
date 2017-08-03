@@ -1,7 +1,7 @@
 <?php
 
-    include 'utils/db.php';
-
+    include_once 'utils/db.php';
+     $dataBase = new DataBase();
         echo "Connected<br/>";
         
        include 'filterModel.php'; 
@@ -9,7 +9,8 @@
            if(! empty($category)){
                $query .= " WHERE category='$category'";
            }
-        $results = $db->query($query);
+        /*$results = $db->query($query);*/
+        $results = $dataBase->getDB()->query($query);
         $returnedSefer = "";
         foreach($results as $sefer) {
            $returnedSefer .= "<option> {$sefer['name']} </option>"; 
@@ -18,7 +19,8 @@
             $theSefer = $_GET['name'];
        
         $query = "SELECT * FROM seforim  WHERE name = '$theSefer'";
-        $results = $db->query($query);
+        /*$results = $db->query($query);*/
+        $results = $dataBase->getDB()->query($query);
         $selectedReturnedSefer = "";
         $seferPrice = "";
         foreach($results as $sefer) { 

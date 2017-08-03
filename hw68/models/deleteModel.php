@@ -1,7 +1,7 @@
 <?php
 
-    include 'utils/db.php';
-     
+    include_once 'utils/db.php';
+        $dataBase = new DataBase();
         // $theSefer = "";
         // if(isset($_POST['name'])){
         //     if(empty($_POST['name'])){
@@ -11,7 +11,8 @@
         //     }
         // }        
         $del = "DELETE FROM seforim WHERE name = :theSefer";
-        $statement = $db->prepare($del);
+        /*$statement = $db->prepare($del);*/
+        $statement = $dataBase->getDB()->prepare($del);
         $statement->bindValue('theSefer',$theSefer);
         $statement->execute();
         
@@ -21,7 +22,8 @@
                $query .= " WHERE category='$category'";
            }
         
-        $results = $db->query($query);
+       /* $results = $db->query($query);*/
+        $results = $dataBase->getDB()->query($query);
         $returnedSefer = "";
         foreach($results as $sefer) {
         $returnedSefer .= "<option> {$sefer['name']} </option>"; 
