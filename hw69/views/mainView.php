@@ -8,7 +8,7 @@
              public function createPage(){
 
                      include 'top.php';
-                     specialPage();
+                     $this->specialPage();
                      include 'bottom.php';
              }
 
