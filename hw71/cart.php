@@ -89,7 +89,7 @@ class Cart {
     </ul>       
        <?php endforeach ?>
          
-        <?php else:?>
+        <?php elseif(empty($_SESSION['cart'])) :?>
             <h2>Your cart is empty<h2>
         <?php endif ?>
    
