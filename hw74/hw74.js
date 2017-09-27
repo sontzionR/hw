@@ -1,4 +1,4 @@
-alert(name);
+alert("Hello " + name);
 
 function greaterThan(a, b){
      
