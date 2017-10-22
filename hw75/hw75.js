@@ -1,6 +1,6 @@
-var upper = ["Q","W","E"];
-var lower = ["q","w","e"];
-var mixed = ["q","W","E"];
+var upper = ['Q','W','E'];
+var lower = ['q','w','e'];
+var mixed = ['q','W','E','r'];
 
 function ourSome(theArray,callback){
 
@@ -32,11 +32,13 @@ function printIt(element){
 
 function onlyIf(theArray,callback,action){
     
-        for(var i = 0; i < theArray.length; i++){
-            if(callback(theArray[i])){
-               action(theArray[i]);
-            }
+    for(var i = 0; i < theArray.length; i++){
+        if(callback(theArray[i])){
+            action(theArray[i]);
         }
     }
+}
 
-    console.log(onlyIf(mixed,isUpper,printIt));    
+console.log(onlyIf(mixed,isUpper,printIt));
+
+mixed.filter(isUpper).forEach(printIt);
