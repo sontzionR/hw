@@ -19,3 +19,26 @@ var theMonthUtils = (function () {
 }());
 console.log("theMonthUtils.getMonthName(10)", theMonthUtils.getMonthName(10));
 console.log('theMonthUtils.getMonthNumber("Jan")', theMonthUtils.getMonthNumber("Jan"));
+
+var interestCalculator = (function (){
+    'use strict';
+    var rate=0;
+    var years=0; 
+
+    return{
+
+    setRate : function(setRt){
+        rate = setRt;
+    },
+    setYears : function(setYrs){
+        years = setYrs;
+    },
+    calculateInterest : function(amount){
+         return amount * rate * years;    
+    }
+  }; 
+}());
+
+interestCalculator.setRate(5);
+interestCalculator.setYears(15);
+console.log(interestCalculator.calculateInterest(405000));
