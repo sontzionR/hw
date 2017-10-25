@@ -26,12 +26,13 @@ var interestCalculator = (function (){
     var years=0; 
 
     return{
-
     setRate : function(setRt){
         rate = setRt;
+        return this;
     },
     setYears : function(setYrs){
         years = setYrs;
+        return this;
     },
     calculateInterest : function(amount){
          return amount * rate * years;    
@@ -42,3 +43,4 @@ var interestCalculator = (function (){
 interestCalculator.setRate(5);
 interestCalculator.setYears(15);
 console.log(interestCalculator.calculateInterest(405000));
+console.log(interestCalculator.setRate(10).setYears(10).calculateInterest(405000));
