@@ -11,7 +11,7 @@ var app = app || {};
      counters++;
      var counter=0;
      return{
-            counter:counter,
+            counter:counter,/* i still have to make this non global*/
 
             increment: function(){
               return this.counter++;
