@@ -11,14 +11,14 @@ var app = app || {};
      counters++;
      var counter=0;
      return{
-            counter:counter,/* i still have to make this non global*/
+            /* now it works*/
 
             increment: function(){
-              return this.counter++;
+              return counter++;
             },
 
             getCounter: function() {
-              return this.counter;
+              return counter;
             }       
         };
      };

@@ -12,6 +12,7 @@ myFor(5,a);
 myFor(5,b);
 console.log("a.getCounter()=",a.getCounter()," and b.getCounter()=",b.getCounter(),"because they are really both the same counter!");
 b.counter=4444;/* great! this did nothing. counter is not global*/
+console.log(b.getCounter());
 ///////////////////////////
 
 var c = app.createCounters.createCountersObject();
@@ -19,7 +20,7 @@ var d = app.createCounters.createCountersObject();
 
 myFor(5,c);
 myFor(15,d);
-d.counter = 4444;/* oh oh this was able to access counter hope to work on this later*/
+d.counter = 4444;/*now it works, will not alloow access. not global*/
 console.log("c.getCounter()=",c.getCounter()," and d.getCounter()=",d.getCounter(),"because they are not the same counter!");
 
 ////////////////////////////////////////////
