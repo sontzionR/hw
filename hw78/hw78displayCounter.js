@@ -20,7 +20,7 @@ var d = app.createCounters.createCountersObject();
 
 myFor(5,c);
 myFor(15,d);
-d.counter = 4444;/*now it works, will not alloow access. not global*/
+d.counter = 4444;/*now it works, will not allow access. wont change counter not global*/
 console.log("c.getCounter()=",c.getCounter()," and d.getCounter()=",d.getCounter(),"because they are not the same counter!");
 
 ////////////////////////////////////////////
