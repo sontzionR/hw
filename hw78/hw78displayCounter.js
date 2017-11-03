@@ -1,11 +1,12 @@
 function myFor(num,c){
+     "use strict";
     for (var i = 0; i < num; i++) {
         c.increment();
         }
     }    
 
 
-var a = app.theCounter;
+var a = app.theCounter.increment();
 var b = app.theCounter;
 
 myFor(5,a);

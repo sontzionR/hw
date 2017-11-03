@@ -1,4 +1,5 @@
 (function(){
+    "use strict";
     var theBody = document.body;
     // var fontChooser = document.getElementById("fontColor").value;
     // var backgroundChooser = document.getElementById("backgroundColor").value;
