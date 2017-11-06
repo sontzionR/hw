@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>Document</title>
     <style>
         table {
@@ -21,7 +23,7 @@
 </head>
 
 <body>
-
+    <div class="container">
         <!-- <form id="theForm"> -->
                 <label for="first">First Name:<input type="text" id="first" value=""/></label>
                 <label for="last">Last Name:<input type="text" id="last" value=""/></label> 
@@ -30,28 +32,41 @@
                 <button id="add">Add Contact</button>  
             <!-- </form> -->
 
-    <table id="contactTable">
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="4">No contacts</td>
-            </tr>
-        </tbody>
-    </table>
+            
+    
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 table-responsive">
+                <table id="contactTable" class="table table-striped table-bordered table-hover">
+                    <caption>
+                        <h3>Contact List</h3>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4">No contacts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
     
 
    
 
     <script src="contacts.js"></script>
 
-   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--script src="/bootstrap-3.3.7/js/bootstrap.min.js"></script-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 
 </html>

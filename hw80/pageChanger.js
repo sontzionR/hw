@@ -8,15 +8,16 @@
         var red = Math.floor(Math.random() * 255);
         var green = Math.floor(Math.random() * 255);
         var blue = Math.floor(Math.random() * 255);
-
+         
         //with hex
         var letters= '0123456789ABCDEF';
         var color = '#';
         for (var i = 0; i < 6; i++) {
           color += letters[Math.floor(Math.random() * 16)];
         } 
+    var rgb;    
     page.style.backgroundColor = color;   
-    page.style.color = "rgb("+red+","+green+","+blue+")";
+    page.style.color = rgb(red,green,blue);
     
     }
 

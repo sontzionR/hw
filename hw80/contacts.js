@@ -10,9 +10,10 @@
     var last = get("last");
     var phone = get("phone");
     var email = get("email");
-    
+    var add = get("add");
+
     function addContact() {
-   
+    
         var contact = {
             firstName: first,
             lastName: last,
@@ -22,9 +23,10 @@
 
         contacts.push(contact);
 
-        if (contacts.length === 1) {
+        if (contacts.length === 1 ) {
             contactTable.deleteRow(1);
         }
+
     
         var row = contactTable.insertRow();
         var firstNameCell = row.insertCell();
@@ -35,7 +37,7 @@
         firstNameCell.innerHTML = first.value;
         lastNameCell.innerHTML = last.value;
         phoneCell.innerHTML = phone.value;
-        emailCell.innerHTML = email.value;     
+        emailCell.innerHTML = email.value;  
     }
 
     function emptyField() {
@@ -44,11 +46,20 @@
        last.value = "";
        phone.value = "";
        email.value = "";
-
+      
     }
 
-      get("add").addEventListener("click",addContact);
-      get("add").addEventListener("click",emptyField);
+   
+    add.addEventListener("click",addContact);   
+    add.addEventListener("click",emptyField);
+        
+    // if(first.innerHTML.length > 0){
+    // get("add").addEventListener("click",addContact);
+    //  get("add").addEventListener("click",emptyField);
+    // }
+    //  else if(first.innerHTML === ""){
+    //     get("add").removeEventListener("click",addContact);
+    // }
     // //   get("theForm").addEventListener("submit",function(event){
     // //   event.preventDefault();      
     //   });
