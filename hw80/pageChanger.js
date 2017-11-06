@@ -15,9 +15,9 @@
         for (var i = 0; i < 6; i++) {
           color += letters[Math.floor(Math.random() * 16)];
         } 
-    var rgb;    
+        
     page.style.backgroundColor = color;   
-    page.style.color = rgb(red,green,blue);
+    page.style.color(red,green,blue);
     
     }
 
