@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <title>Dashboard Template for Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style>
+        #main{
+            margin-top:4%;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+         <div>
+            <button id="theButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Start</button>
+         </div>
+        </div>
+      </nav>
+    </header>
+    <div id="main" class="container-fluid">
+      <div class="row">
+        <main role="main" class="col-sm-12  col-md-12 pt-3">
+             <section class="row text-center placeholders">
+            <div id="hourbox" class="col-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="300" height="200" class="img-fluid rounded-square" alt="Generic placeholder thumbnail">
+              <h4>HOUR</h4>
+            </div>
+            <div id="minutebox" class="col-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="300" height="200" class="img-fluid rounded-square" alt="Generic placeholder thumbnail">
+              <h4>MINUTE</h4>
+            </div>
+            <div id="secondbox" class="col-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="300" height="200" class="img-fluid rounded-square" alt="Generic placeholder thumbnail">
+              <h4>SECOND</h4>
+            </div>
+            <div id="millibox" class="col-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="300" height="200" class="img-fluid rounded-square" alt="Generic placeholder thumbnail">
+              <h4>MILLISECOND</h4>
+            </div>
+          </section>
+          <h2>LOG</h2>
+          <div class="table-responsive">       
+                  <div>
+                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Clear</button>
+                  </div>        
+            <table id="logTable" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>OCCURANCE</th>
+                  <th>START</th>
+                  <th>STOPPED</th>
+                  <th>TIME ELAPSED</th>
+                </tr>
+              </thead>
+              <!-- <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>00:00:00:00</td>
+                  <td>00:00:00:25</td>
+                  <td>00:00:00:25</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>00:00:00:25</td>
+                  <td>00:00:01:25</td>
+                  <td>00:00:01:00</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>00:00:01:00</td>
+                  <td>00:00:01:33</td>
+                  <td>00:00:00:33</td>
+                </tr>
+                
+              </tbody> -->
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="stopWatch.js"></script>
+  </body>
+</html>
