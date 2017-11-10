@@ -15,9 +15,10 @@
     var hour;
     var start;
     var end;
-    var i = 0;
+    var i = 1;
     var tempdate;
     var saved;
+    
 
     function savedInterval() {
         saved = end - start;
@@ -40,7 +41,18 @@
             hourBox.innerHTML = hour;
         }, 1);
     }
+    function table(){
+        var row = logTable.insertRow();
+        var occuranceCell = row.insertCell();
+        var startCell = row.insertCell();
+        var endCell = row.insertCell();
+        var intravelCell = row.insertCell();
 
+        occuranceCell.innerHTML = i++;
+        startCell.innerHTML = start;
+        endCell.innerHTML = end;
+        intravelCell.innerHTML = saved;
+    }
     var theButton = get("theButton");
     theButton.addEventListener("click", function () {
         if (theInterval) {
@@ -49,17 +61,8 @@
             theButton.innerHTML = 'Start';
             end = new Date();
             savedInterval();
+            table();
 
-            var row = logTable.insertRow();
-            var occuranceCell = row.insertCell();
-            var startCell = row.insertCell();
-            var endCell = row.insertCell();
-            var intravelCell = row.insertCell();
-
-            occuranceCell.innerHTML = i++;
-            startCell.innerHTML = start;
-            endCell.innerHTML = end;
-            intravelCell.innerHTML = saved;
         } else {
             theButton.innerHTML = 'Stop';
             start = new Date();
