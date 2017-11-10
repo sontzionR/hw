@@ -6,7 +6,8 @@ pcs.messagebox = (function () {
      var span;
      var input;
      var count=1;
-
+     var modulDiv;
+     var anothercount = 1;
     function createElement(type) {
         return document.createElement(type);
     }
@@ -17,7 +18,7 @@ pcs.messagebox = (function () {
         input = createElement("input");
         var buttonDiv = createElement("div");
         var okButton = createElement("button");
-        var modulDiv = createElement("div");
+        modulDiv = createElement("div");
         div.appendChild(input);
         okButton.innerHTML = "OK";
         buttonDiv.appendChild(okButton);
@@ -49,9 +50,7 @@ pcs.messagebox = (function () {
             count++;
             div.style.zIndex = count+1;
             modulDiv.style.zIndex = count;
-            
             document.body.appendChild(modulDiv);
-            
             show();
             input.value = "";
             
@@ -90,8 +89,9 @@ pcs.messagebox = (function () {
         buttonDiv.style.marginLeft = '-20px';
 
         okButton.addEventListener("click", function () {
+            anothercount++;
             document.body.removeChild(div);
-            
+            modulDiv.style.zIndex=count- anothercount;
         });
     }
 
