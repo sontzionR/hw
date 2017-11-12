@@ -1,3 +1,7 @@
+/*homework 82 parts 1,2 and 3. In addition, i made such as when the modul is checked, each
+ additional message box will be be the only one that you may click in other words, you must
+ click the last box before the previous. also once you click that one, only then will the previous one enable click*/
+
 var pcs = pcs || {};
 
 pcs.messagebox = (function () {
@@ -6,8 +10,11 @@ pcs.messagebox = (function () {
      var span;
      var input;
      var count=1;
+     var checkbox;
      var modulDiv;
      var anothercount = 1;
+     var msgBoxColor = ['blue', 'red', 'green','yellow','purple','pink'];
+
     function createElement(type) {
         return document.createElement(type);
     }
@@ -16,6 +23,9 @@ pcs.messagebox = (function () {
        
         var div = createElement("div");
         input = createElement("input");
+        checkbox = document.createElement("INPUT");
+        checkbox.setAttribute("type", "checkbox");
+        div.appendChild(checkbox);
         var buttonDiv = createElement("div");
         var okButton = createElement("button");
         modulDiv = createElement("div");
@@ -35,7 +45,7 @@ pcs.messagebox = (function () {
         div.style.backgroundColor = 'blue';
         div.style.padding = '20px';
         div.style.width = '200px';
-        div.style.height = '80px';
+        div.style.height = '100px';
         div.style.border = '1px solid blue';
         div.style.position = 'absolute';
         div.style.boxSizing = 'border-box';
@@ -48,9 +58,11 @@ pcs.messagebox = (function () {
 
         okButton.addEventListener("click", function () {
             count++;
-            div.style.zIndex = count+1;
+            if(checkbox.checked === true){
+               div.style.zIndex = count+1;
             modulDiv.style.zIndex = count;
-            document.body.appendChild(modulDiv);
+            document.body.appendChild(modulDiv); 
+            }
             show();
             input.value = "";
             
@@ -69,11 +81,11 @@ pcs.messagebox = (function () {
         div.appendChild(buttonDiv);
         document.body.appendChild(div);
         div.style.zIndex = count;
-        div.style.backgroundColor = 'lightGreen';
+        div.style.backgroundColor=msgBoxColor[Math.floor(Math.random() * msgBoxColor.length)];
         div.style.padding = '20px';
         div.style.width = '400px';
         div.style.height = '100px';
-        div.style.border = '1px solid blue';
+        div.style.border = '4px solid black';
         div.style.position = 'relative';
         div.style.left = '50%';
         div.style.top = '50%';
@@ -88,6 +100,12 @@ pcs.messagebox = (function () {
         buttonDiv.style.width = '100%';
         buttonDiv.style.marginLeft = '-20px';
 
+        if(checkbox.checked !== true){
+        div.addEventListener("click",function(){
+            div.style.zIndex =(count++) * 10;
+        });
+        }
+
         okButton.addEventListener("click", function () {
             anothercount++;
             document.body.removeChild(div);
@@ -97,6 +115,6 @@ pcs.messagebox = (function () {
 
     return {
         inputText: inputText,
-        show: show
+        // show: show
     };
 }());
