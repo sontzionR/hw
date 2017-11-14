@@ -14,6 +14,7 @@ pcs.messagebox = (function () {
      var modulDiv;
      var anothercount = 1;
      var msgBoxColor = ['blue', 'red', 'green','yellow','purple','pink'];
+     var top = -50;
 
     function createElement(type) {
         return document.createElement(type);
@@ -58,6 +59,7 @@ pcs.messagebox = (function () {
 
         okButton.addEventListener("click", function () {
             count++;
+            top = top+25;
             if(checkbox.checked === true){
                div.style.zIndex = count+1;
             modulDiv.style.zIndex = count;
@@ -70,6 +72,7 @@ pcs.messagebox = (function () {
     }
 
     function show() {
+        
         var div = createElement("div");
         span = createElement("span");
         var buttonDiv = createElement("div");
@@ -86,11 +89,12 @@ pcs.messagebox = (function () {
         div.style.width = '400px';
         div.style.height = '100px';
         div.style.border = '4px solid black';
-        div.style.position = 'relative';
+        div.style.position = 'absolute';
         div.style.left = '50%';
         div.style.top = '50%';
         div.style.marginLeft = '-200px';
-        div.style.marginTop = '-50px';
+        // div.style.marginTop = '-10px';
+        div.style.marginTop = top+'px';
         div.style.boxSizing = 'border-box';
         div.style.display = 'inline-block';
 
@@ -107,9 +111,12 @@ pcs.messagebox = (function () {
         }
 
         okButton.addEventListener("click", function () {
+           
             anothercount++;
             document.body.removeChild(div);
             modulDiv.style.zIndex=count- anothercount;
+            
+
         });
     }
 
