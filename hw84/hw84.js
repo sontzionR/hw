@@ -69,15 +69,23 @@ var pcs = (function () {
             setValue: function (){
                   return elem.value;
             },
-            setData: function(Data){
-                  data = Data;
-                  return this;
-            },
-            getData: function(){
+            // setData: function(Data){
+                
+            //       data = Data;
+            //       return this;
+            // },
+            // getData: function(){
                  
-                  return data;
-                }
-            
+            //       return data;
+            // }
+            data: function (Data){
+               if(Data){
+                 data = Data;
+                 return this;
+               }else{
+                 return data;                                     
+               } 
+            }
 
         };
     };
