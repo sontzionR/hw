@@ -19,7 +19,7 @@
             $("#theFile").append(statusCode,statusText);
             // alert("error: " + statusText);
             // console.log(xhr, statusCode, statusText);
-            // $.get("/HTML/HW/class/JavaScript/83/messageBox.js",function(){
+            //hope to finish this e.c. tomorrow...  $.get("/HTML/HW/class/JavaScript/83/messageBox.js",function(){
             // })
 
         });
