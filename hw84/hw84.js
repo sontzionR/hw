@@ -6,6 +6,9 @@ var pcs = (function () {
     function setCss(elem, property, value) {
         elem.style[property] = value;
     }
+    // function data(elem,key,value){
+        
+    // }
 	
     return function (id) {
         var elem = get(id);
@@ -78,6 +81,7 @@ var pcs = (function () {
                  
             //       return data;
             // }
+            
             data: function (Data){
                if(Data){
                  data = Data;

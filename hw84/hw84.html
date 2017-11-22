@@ -15,7 +15,7 @@
             display: inline-block;
         }
         h1{
-            font-size: 50px;
+            font-size: 70px;
         }
     </style>
 </head>
@@ -33,42 +33,42 @@
         pcs.tools.setCss(dt, "color", "red");*/
 
 
-        // var dt = pcs("theDonald");
-        // dt.css("color", "red");
-        // dt.css("backgroundColor", "black");
-        // dt.pulsate();
+        var dt = pcs("theDonald");
+        dt.css("color", "red");
+        dt.css("backgroundColor", "black");
+        dt.pulsate();
        
 
-        // pcs("pcs")
-        //     .css("color", "yellow")
-        //     .css("backgroundColor", "green")
-        //     .pulsate()
-        //     .click(function (event) {
-        //         console.log("PCS was clicked", event);
-        //     })
-        //     .click(function () {
-        //         console.log("PCS was clicked - no event accepted");
-        //     });
+        pcs("pcs")
+            .css("color", "yellow")
+            .css("backgroundColor", "green")
+            .pulsate()
+            .click(function (event) {
+                console.log("PCS was clicked", event);
+            })
+            .click(function () {
+                console.log("PCS was clicked - no event accepted");
+            });
 
-        // var thing1 = pcs('thing1')
-        //     .hide()
-        //     .css("backgroundColor", "pink")
-        //     .click(function () {
-        //         thing1.hide();
-        //         thing2.show();
-        //         thing3.hide();
-        //     });
+        var thing1 = pcs('thing1')
+            .hide()
+            .css("backgroundColor", "pink")
+            .click(function () {
+                thing1.hide();
+                thing2.show();
+                thing3.hide();
+            });
 
-        // var thing2 = pcs('thing2')
-        //     .css("backgroundColor", "purple")
-        //     .click(function () {
-        //         thing2.hide();
-        //         thing1.show();
-        //         thing3.show();
-        //     });
-
-        // var thing3 = pcs("thing3");
-
+        var thing2 = pcs('thing2')
+            .css("backgroundColor", "purple")
+            .click(function () {
+                thing2.hide();
+                thing1.show();
+                thing3.show();
+            });
+        
+        var thing3 = pcs("thing3");
+        
         var dataInput = pcs("data");
         var addData = pcs("addData").css("color","yellow").setInnerHtml("enter data").click(function(){
             addData.data(dataInput.setValue());

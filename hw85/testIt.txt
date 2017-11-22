@@ -1,0 +1,6 @@
+Files from tonight's class have been uploaded to Github and Dropbox
+For homework.
+•	Create a page that allows the user to enter the name of a file to load. When the user clicks the "load" button, load that file using AJAX and display the contents somewhere on the page (not an alert, show it on the page). Files to be loaded of course must be on same domain and in a location servable by your web server - for simplicity start with simply loading files in same directory as the html file as we did in class. 
+•	If something goes wrong, show an error message (not an alert, show it on the page). .E.C  use a pcs.messagebox (from a previous class) instead.
+•	Have a "loading..." message or icon (maybe a spinner)  that shows while the loading is happening. (you might need an artificial timeout somewhere to make the spinner stay long enough to really be noticed but you should be able to see it at flash briefly even without adding artificial wait times)
+•	Use jQuery for all DOM manipulation and for the Ajax. (E.C. Just for fun write it both ways, once using jQuery and once without)
