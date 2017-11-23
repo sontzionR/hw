@@ -1,27 +1,30 @@
 /*global $ */
+/*global pcs */
 (function () {
     "use strict";
    
     $("#theButton").click(function (){
+        var fileName = $("#fileName");
+        // fileName = fileName.val();
+        if(fileName.val().length === 0){
+            $("body").appendTo(pcs.messagebox.show("Please enter a file path"));
+        }else{
         var loader = $(".loader");
         loader.css({"border": "6px solid #f3f3f3","border-radius": "50%","border-top": "6px solid #3498db","width": "15px","height": "15px", "-webkit-animation": "spin 1s linear infinite", "animation": "spin 1s linear infinite"}).show();
-        var fileName = $("#fileName");
-        fileName = fileName.val();
         setTimeout(function () {
-            $.get(fileName, function (file) {
+            $.get(fileName.val(), function (file) {
                 loader.hide();
-                $("#theFile").text(file).css("background-color","green");;
+                $("#theFile").text(file).css("background-color","green");
+                fileName.val('');
             }).fail(function (xhr, statusCode, statusText) {
                 loader.hide();
-                 $("#theFile").text(statusCode,statusText).css("background-color","red");
-                //  alert("error: " + statusText);
-                // console.log(xhr, statusCode, statusText);
-                //cant get it to work  $.get(/*"/HTML/HW/class/JavaScript/83/messageBox.js"*/"/HTML/HW/class/JavaScript/81/messageBox.js",function(d){
-               //  pcs.messageBox.show("error");
-                //  });
-
+                 $("#theFile").text(statusCode + statusText).css("background-color","red");
+                 $("body").appendTo(pcs.messagebox.show("error" + " "+ statusText));
+                 fileName.val('');
+                //  $("body").appendTo(pcs.messagebox.show("error" + " "+ statusText,true));   
             });
-        },2000);    
+        },2000); 
+    }   
     });
 
 }());
