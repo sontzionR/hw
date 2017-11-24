@@ -1,0 +1,20 @@
+[
+    {
+        "firstName":"joe",
+        "lastName":"doe",
+        "email":"email.com",
+        "phone":"123456789"
+    },
+    {
+        "firstName":"john",
+        "lastName":"smith",
+        "email":"email.gmail",
+        "phone":"987654321"
+    },
+    {
+        "firstName":"bill",
+        "lastName":"gates",
+        "email":"microsoft.com",
+        "phone":"5647382910"
+    }
+]
