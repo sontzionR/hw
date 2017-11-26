@@ -47,12 +47,12 @@
     // });
 
     $("#getCntct").click(function (){
-        $.get("contacts.json", function (cntcts) {
+        // $.get("contacts.json", function (cntcts) {
+            $.get("contacts.php", function (cntcts) {
             // console.log(cntcts);
             $.each(cntcts,function(index, ctc){
             addContact(ctc);
-            // addContact(cntcts[index]);
-            
+            // addContact(cntcts[index]);        
         });     
         // }).fail(function (xhr) {
         });
