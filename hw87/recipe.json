@@ -1,0 +1,22 @@
+[
+{
+    "name":"potatoe kugel",
+    "ingredients":["10 potatoes","oil","eggs","salt","black pepper"],
+    "url":"http://kosherscoop.leverage.it/wp-content/uploads/2013/09/kiddush-potato-kugel.jpg"
+},
+{
+    "name":"lukshen kugel",
+    "ingredients":["1 bag lukshen","oil","eggs","salt","black pepper"],
+    "url":"https://toriavey.com/images/2012/05/Sweet-Lokshen-Kugel--900x675.jpg"
+},
+{
+    "name":"broccoli kugel",
+    "ingredients":["1bag broccoli","3 eggs"],
+    "url":""
+},
+{
+    "name":"prime rib",
+    "ingredients":["2 inch rib steak","olive oil","salt","black pepper"],
+    "url":"https://www.kansascitysteaks.com/dyn-images/pdp_hero/PrimeRIb_-_prime_sli-b8b16653da6a4615ed3f7a25abd57416.jpg"
+}
+]

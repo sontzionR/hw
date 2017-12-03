@@ -11,7 +11,7 @@
         $query = "SELECT firstName,lastName,email,phone FROM contacts";
         $results = $db->query($query);
         $contacts = $results->fetchAll();
-        header('Content-Type: application/json');/*didnt work without this????*/
+        // header('Content-Type: application/json');/*didnt work without this????*/
         echo json_encode($contacts);
     } catch(PDOException $e) {
         die("Something went wrong " . $e->getMessage());
