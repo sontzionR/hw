@@ -1,44 +1,64 @@
 (function () {
     "use strict";
-    var theVideo = $("#videoId").css({"width":"600px","height":"450px","border":"20px green","border-style":"solid","background-color":"black"});
+    var theImg = $("#imgId").css({"width":"600px","height":"450px","border":"20px green","border-style":"solid","background-color":"black"});
+    // var theVideo = $("#videoId").css({"width":"600px","height":"450px","border":"20px green","border-style":"solid","background-color":"black"}).hide();
     $.getJSON("video.php", function (item) {
         var length = item.length-1;
         var index = 0;
+        var display =function(indx){
+        // theVideo.hide();
+        theImg.show().attr('src', item[indx].photo);
+        // theImg.click(function () {
+        //     theImg.hide();
+        //     theVideo.show().attr('src', item[indx].video)[0].play();
+        // });
+        console.log(indx);
+        };
+        var interval;
+        display(index);
         $("#a").click(function (event) {
             if (event.target.id === 'prev') {
-                if(index > 0){
-                    index--; 
+                if(interval){
+                    clearInterval(interval);
+                    interval = 0;
+                    return;
                 }
-                else{
-                    index=length;
-                }  
-            theVideo.attr('src', item[index].photo);
-            console.log(index);
+                    if(index > 0){
+                        index--; 
+                    }else{
+                        index=length;
+                    }  
+                    display(index);   
             }
             else if(event.target.id === 'next'){
-                if(index < length){
-                    index++;
+                if(interval){
+                    clearInterval(interval);
+                    interval = 0;
+                    return;
                 }
-                else{
-                    index=0;
-                }
-            theVideo.attr('src', item[index].photo);
-            console.log(index);
+                    if(index < length){
+                        index++;
+                    } else{
+                        index=0;
+                    }
+                    display(index);
             }
             else if(event.target.id === 'slide'){
-                setInterval(function() {
-
-                    if (index < length) {
-                        theVideo.attr('src', item[index].photo);
-                        console.log(index);
-                    }
-                    else{
-                        index=0;
-                        theVideo.attr('src', item[index].photo);
-                        console.log(index);
-                    }
-                    index++;
-                }, 5000);
+                if(!interval){
+                    // $("#slide").css("background-color","red");
+                    interval = setInterval(function() {
+                        if (index < length) {
+                            display(index);
+                            index++;
+                        }else if(index === length){
+                            display(index);
+                            index=0;
+                        } 
+                    }, 1000);
+                }else{
+                    clearInterval(interval);
+                    interval = 0;
+                }
             }
         });
         
