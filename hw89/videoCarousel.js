@@ -1,19 +1,15 @@
 (function () {
+    /*global $*/
     "use strict";
     var theImg = $("#imgId").css({"width":"600px","height":"450px","border":"20px green","border-style":"solid","background-color":"black"});
     // var theVideo = $("#videoId").css({"width":"600px","height":"450px","border":"20px green","border-style":"solid","background-color":"black"}).hide();
     $.getJSON("video.php", function (item) {
         var length = item.length-1;
         var index = 0;
-        var display =function(indx){
-        // theVideo.hide();
-        theImg.show().attr('src', item[indx].photo);
-        // theImg.click(function () {
-        //     theImg.hide();
-        //     theVideo.show().attr('src', item[indx].video)[0].play();
-        // });
-        console.log(indx);
-        };
+        var display = function(indx){
+            theImg.show().attr('src', item[indx].photo);
+            console.log(indx);
+            };
         var interval;
         display(index);
         $("#a").click(function (event) {
