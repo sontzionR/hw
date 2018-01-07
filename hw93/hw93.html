@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+     #sidebar {
+            float: left;
+            height: 100%;
+            overflow-y: auto;
+           
+        }
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+            position: absolute;
+        }
+
+        #sidebar li {
+            cursor: pointer;
+            border: 1px solid black;
+            margin: 4px;
+        }
+        /* img{
+            position: absolute;
+        } */
+</style>
+<body>
+        <div id="sidebar">
+            <ul></ul>
+        </div>
+    <script src="/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="dragging.js" async defer></script>
+</body>
+</html>
