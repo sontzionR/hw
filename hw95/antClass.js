@@ -42,7 +42,7 @@
         }
 
     }
-    var canvas = $("#theCanvas"),
+    var canvas = document.getElementById("theCanvas"),
     context = canvas.getContext('2d'),
     colr = $("#color"),
     amount = $("#num"),
