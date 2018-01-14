@@ -1,7 +1,8 @@
-'use strict'
+(function() {
+'use strict';
 
 function Vehicle(color){
-    this.color = color;
+    this. color = color;
 }
 
 Vehicle.prototype.go = function(speed){
@@ -36,3 +37,4 @@ var boeing737 = new Plane('blue');
 boeing737.go(350);
 boeing737.print();
 
+}());
