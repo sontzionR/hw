@@ -63,7 +63,7 @@
 
     add(100);
 
-    $("#go").click(function(){
+    $("#go").click(()=>{
         add(amount.val());    
     });
 
