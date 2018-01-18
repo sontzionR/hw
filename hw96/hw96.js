@@ -24,7 +24,7 @@
 
     
     img.onload = function () {
-        context.drawImage(img, 0,0, 70, 64, 64);
+        context.drawImage(img, 0,0, 64, 64);
     };
    
     window.addEventListener('keydown', function (event) {
