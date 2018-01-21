@@ -7,8 +7,8 @@
     // canvas.height = window.innerHeight/2;
     var x=0,
     y=0,
-    width=64,
-    height=64,
+    
+    size=64,
     direction = "right";
     function resizeCanvas() {
         canvas.width = window.innerWidth - 10;
@@ -24,7 +24,7 @@
 
     
     img.onload = function () {
-        context.drawImage(img, 0,0, 64, 64);
+        context.drawImage(img, 0,0, size, size);
     };
    
     window.addEventListener('keydown', function (event) {
@@ -62,10 +62,7 @@
     }
     function move(){
        director();
-      
-        context.drawImage(img,x,y, width, height);
-       
-        
+        context.drawImage(img,x,y,size,size); 
     }
     var interval = setInterval(function(){
         clear();
