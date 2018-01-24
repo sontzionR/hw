@@ -15,12 +15,12 @@
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
  
-  var radius = 25,
+  var radius = 20,
     x = getRandomNumberBetween(radius,canvas.width-radius),
     y = getRandomNumberBetween(radius,canvas.height-radius),
-    nextX = 1,
-    nextY = 1,
-    color = 'blue';
+    nextX = 3,
+    nextY = 3,
+    color = 'orange';
     context.beginPath();
     context.arc(x,y,radius, 0, Math.PI * 2, true);
     context.closePath();
@@ -46,9 +46,22 @@
   context.fillStyle = color;
   context.fill();
 }
+ canvas.addEventListener('mousedown',function(event) {
+  switch (event.which) {
+      case 1:
+          nextX++;
+          break;
+      case 3:
+         nextY++;
+         break;
+      default:
+          alert('Mouse is not good');
+  }
+
+});
 
 setInterval(() => {
   context.clearRect(0, 0, canvas.width, canvas.height);
   draw();
-}, 1);
+}, 0.5);
 }());
