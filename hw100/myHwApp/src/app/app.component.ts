@@ -18,6 +18,5 @@ person: Person = { //variable person of type Person
   city: 'washington',
   zip:'111zzz'
   }
- 
 };
 }
