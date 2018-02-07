@@ -3,7 +3,7 @@
 
     'use strict';
 
-    var display = $("#display"),
+    let display = $("#display"),
         home = $("#home"),
         start,
         last,
@@ -19,7 +19,7 @@
         last = 3;
         control = 3;
         lngth = 0;
-        var bloggers = $('<ul><h2>Select a blog</h2></ul>').appendTo(display).css('text-align', 'center');
+        let bloggers = $('<ul><h2>Select a blog</h2></ul>').appendTo(display).css('text-align', 'center');
         $.getJSON("https://jsonplaceholder.typicode.com/users", function (blogs) {
             $.each(blogs, function (i, blog) {
                 $('<li><hr>Name:' + blog.name + '<br>' +
@@ -56,7 +56,7 @@
                 });
             }
             $.each(data.slice(start, last), function (i, dat) { //
-                var thisData = $('<li><hr>Title: ' + dat.title + '<br>' +
+               let thisData = $('<li><hr>Title: ' + dat.title + '<br>' +
                     'Body: ' + dat.body + '<br><button>show comments</button><br>' +
                     '</li><br>')//.css('background-color','yellow')
                     .appendTo(thisBlog),
@@ -64,7 +64,7 @@
                     cmmnts = $("<div></div>").appendTo(thisData),
                     bttn = thisData.find('button')
                         .click(function () {
-                            var thisComments = $('<ol><h2>comments</h2></ol>').appendTo(cmmnts);
+                            let thisComments = $('<ol><h2>comments</h2></ol>').appendTo(cmmnts);
                             // if (cmmntBool===false) {
                             if (!cmmntBool) {
                                 bttn.text("hide comments");
