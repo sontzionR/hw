@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts | async">
+      <td>{{contact.firstName}}</td>
+      <td>{{contact.lastName}}</td>
+      <td>{{contact.email}}</td>
+      <td>{{contact.phone}}</td>
+    </tr>
+  </tbody>
+</table>
